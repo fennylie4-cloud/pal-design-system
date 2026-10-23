@@ -1,0 +1,220 @@
+/* PAL Design System — generated from tokens.json (scripts/build.py). Do not edit by hand; change tokens.json and regenerate. */
+
+/* Tailwind v4 theme for PAL products.
+   Usage (driver web app, src/index.css):
+     @import "tailwindcss";
+     @import "../../pal-design-system/tailwind-theme.css";
+   and put data-app="driver" on <html>.
+   Apps use Geist; Barlow is for the marketing site only. */
+
+@import "./tokens.css";
+
+@theme inline {
+  /* Literal stacks: tokens.css declares --font-sans too, and a self-reference would be a cycle. */
+  --font-sans: Geist, system-ui, sans-serif;
+  --font-heading: Geist, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+
+  /* shadcn semantic colours mapped to PAL tokens */
+  --color-background: var(--bg-app);
+  --color-foreground: var(--text-primary);
+  --color-card: var(--bg-surface);
+  --color-card-foreground: var(--text-primary);
+  --color-popover: var(--bg-app);
+  --color-popover-foreground: var(--text-primary);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--on-accent);
+  --color-secondary: var(--bg-elevated);
+  --color-secondary-foreground: var(--text-primary);
+  --color-muted: var(--bg-elevated);
+  --color-muted-foreground: var(--text-muted);
+  --color-accent: var(--accent-fill);
+  --color-accent-foreground: var(--accent-text);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--focus);
+
+  /* Brand scales as utilities: bg-husk-400, text-cod-700 ... */
+  --color-cod-50: var(--cod-50);
+  --color-cod-100: var(--cod-100);
+  --color-cod-200: var(--cod-200);
+  --color-cod-300: var(--cod-300);
+  --color-cod-400: var(--cod-400);
+  --color-cod-500: var(--cod-500);
+  --color-cod-600: var(--cod-600);
+  --color-cod-700: var(--cod-700);
+  --color-cod-800: var(--cod-800);
+  --color-cod-900: var(--cod-900);
+  --color-cod-950: var(--cod-950);
+  --color-husk-50: var(--husk-50);
+  --color-husk-100: var(--husk-100);
+  --color-husk-200: var(--husk-200);
+  --color-husk-300: var(--husk-300);
+  --color-husk-400: var(--husk-400);
+  --color-husk-500: var(--husk-500);
+  --color-husk-600: var(--husk-600);
+  --color-husk-700: var(--husk-700);
+  --color-husk-800: var(--husk-800);
+  --color-husk-900: var(--husk-900);
+  --color-husk-950: var(--husk-950);
+
+  /* Status pills and tones: bg-pill-new-bg, text-tone-warn-fg ... */
+  --color-pill-new-bg: var(--pill-new-bg);
+  --color-pill-new-fg: var(--pill-new-fg);
+  --color-pill-accepted-bg: var(--pill-accepted-bg);
+  --color-pill-accepted-fg: var(--pill-accepted-fg);
+  --color-pill-ontheway-bg: var(--pill-ontheway-bg);
+  --color-pill-ontheway-fg: var(--pill-ontheway-fg);
+  --color-pill-onlocation-bg: var(--pill-onlocation-bg);
+  --color-pill-onlocation-fg: var(--pill-onlocation-fg);
+  --color-pill-pob-bg: var(--pill-pob-bg);
+  --color-pill-pob-fg: var(--pill-pob-fg);
+  --color-pill-complete-bg: var(--pill-complete-bg);
+  --color-pill-complete-fg: var(--pill-complete-fg);
+  --color-pill-cancelled-bg: var(--pill-cancelled-bg);
+  --color-pill-cancelled-fg: var(--pill-cancelled-fg);
+  --color-pill-noshow-bg: var(--pill-noshow-bg);
+  --color-pill-noshow-fg: var(--pill-noshow-fg);
+  --color-tone-ok-bg: var(--tone-ok-bg);
+  --color-tone-ok-fg: var(--tone-ok-fg);
+  --color-tone-warn-bg: var(--tone-warn-bg);
+  --color-tone-warn-fg: var(--tone-warn-fg);
+  --color-tone-info-bg: var(--tone-info-bg);
+  --color-tone-info-fg: var(--tone-info-fg);
+  --color-tone-danger-bg: var(--tone-danger-bg);
+  --color-tone-danger-fg: var(--tone-danger-fg);
+  --color-tone-husk-bg: var(--tone-husk-bg);
+  --color-tone-husk-fg: var(--tone-husk-fg);
+
+  /* Semantic spacing: p-app-card, gap-app-gutter, h-app-bar-h ... */
+  --spacing-section-y: 120px;
+  --spacing-section-x: 48px;
+  --container-max: 1280px;
+  --spacing-card-padding: 28px;
+  --spacing-cta-card-padding: 40px;
+  --spacing-app-inline: 8px;
+  --spacing-app-gutter: 12px;
+  --spacing-app-stack: 16px;
+  --spacing-app-card: 16px;
+  --spacing-app-page: 16px;
+  --spacing-app-section: 32px;
+  --spacing-app-hero: 40px;
+  --spacing-tap: 44px;
+  --spacing-icon-tile: 36px;
+  --spacing-app-bar-h: 56px;
+  --spacing-tab-bar-h: 64px;
+  --container-app: 520px;
+  --container-narrow: 380px;
+  --container-reading: 640px;
+
+  /* Radius by role: rounded-control, rounded-app-card, rounded-sheet, rounded-card, rounded-cta.
+     sm / md / full are left to Tailwind so shadcn primitives keep their current corners. */
+  --radius-card: 10px;
+  --radius-cta: 12px;
+  --radius-control: 6px;
+  --radius-app-card: 8px;
+  --radius-sheet: 14px;
+
+  /* Shadow: shadow-lifted, shadow-gold ... */
+  --shadow-card-hover: 4px 4px 22.6px rgba(182, 162, 105, 0.10);
+  --shadow-gold: 0 8px 24px rgba(182, 162, 105, 0.25);
+  --shadow-app-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-lifted: 0 6px 20px -6px rgba(0, 0, 0, 0.12);
+  --shadow-sheet-up: 0 -12px 40px rgba(0, 0, 0, 0.18);
+  --shadow-focus: 0 0 0 3px rgba(182, 162, 105, 0.30);
+  --shadow-glow-gold: 0 0 40px rgba(182, 162, 105, 0.10);
+
+  /* Type: text-app-body, text-eyebrow ... */
+  --text-hero-headline: 72px;
+  --text-hero-headline--line-height: 1.1;
+  --text-hero-headline--font-weight: 600;
+  --text-hero-headline--letter-spacing: -0.01em;
+  --text-section-heading: 48px;
+  --text-section-heading--line-height: 48px;
+  --text-section-heading--font-weight: 600;
+  --text-section-heading-mobile: 30px;
+  --text-section-heading-mobile--line-height: 36px;
+  --text-section-heading-mobile--font-weight: 600;
+  --text-display-brand: 30px;
+  --text-display-brand--line-height: 36px;
+  --text-display-brand--font-weight: 600;
+  --text-card-title: 20px;
+  --text-card-title--line-height: 28px;
+  --text-card-title--font-weight: 500;
+  --text-tab-label: 20px;
+  --text-tab-label--line-height: 28px;
+  --text-tab-label--font-weight: 500;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-body--font-weight: 400;
+  --text-button-label: 16px;
+  --text-button-label--line-height: 24px;
+  --text-button-label--font-weight: 500;
+  --text-eyebrow: 16px;
+  --text-eyebrow--line-height: 24px;
+  --text-eyebrow--font-weight: 500;
+  --text-eyebrow--letter-spacing: 0.15em;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 20px;
+  --text-label-sm--font-weight: 600;
+  --text-label-sm--letter-spacing: 0.01em;
+  --text-app-display: 36px;
+  --text-app-display--line-height: 1.1;
+  --text-app-display--font-weight: 700;
+  --text-app-display--letter-spacing: -0.015em;
+  --text-app-headline: 24px;
+  --text-app-headline--line-height: 1.2;
+  --text-app-headline--font-weight: 700;
+  --text-app-title: 18px;
+  --text-app-title--line-height: 1.35;
+  --text-app-title--font-weight: 600;
+  --text-app-body-lg: 16px;
+  --text-app-body-lg--line-height: 1.65;
+  --text-app-body-lg--font-weight: 400;
+  --text-app-cta: 16px;
+  --text-app-cta--line-height: 1.4;
+  --text-app-cta--font-weight: 500;
+  --text-app-body: 14px;
+  --text-app-body--line-height: 1.6;
+  --text-app-body--font-weight: 400;
+  --text-app-label: 13px;
+  --text-app-label--line-height: 1.35;
+  --text-app-label--font-weight: 500;
+  --text-app-caption: 12px;
+  --text-app-caption--line-height: 1.4;
+  --text-app-caption--font-weight: 400;
+  --text-app-eyebrow: 12px;
+  --text-app-eyebrow--line-height: 1;
+  --text-app-eyebrow--font-weight: 700;
+  --text-app-eyebrow--letter-spacing: 0.14em;
+  --text-mono-sm: 12px;
+  --text-mono-sm--line-height: 1.3;
+  --text-mono-sm--font-weight: 500;
+  --text-mono-sm--letter-spacing: 0.02em;
+  --text-mono-xs: 11px;
+  --text-mono-xs--line-height: 1;
+  --text-mono-xs--font-weight: 600;
+
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 350ms;
+  --ease-slow: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-base: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Status pill palette as data attributes (matches the shipped driver CSS). */
+[data-pill="new"] { background-color: var(--pill-new-bg); color: var(--pill-new-fg); }
+[data-pill="accepted"] { background-color: var(--pill-accepted-bg); color: var(--pill-accepted-fg); }
+[data-pill="ontheway"] { background-color: var(--pill-ontheway-bg); color: var(--pill-ontheway-fg); }
+[data-pill="onlocation"] { background-color: var(--pill-onlocation-bg); color: var(--pill-onlocation-fg); }
+[data-pill="pob"] { background-color: var(--pill-pob-bg); color: var(--pill-pob-fg); }
+[data-pill="complete"] { background-color: var(--pill-complete-bg); color: var(--pill-complete-fg); }
+[data-pill="cancelled"] { background-color: var(--pill-cancelled-bg); color: var(--pill-cancelled-fg); }
+[data-pill="noshow"] { background-color: var(--pill-noshow-bg); color: var(--pill-noshow-fg); }
+[data-tone="ok"] { background-color: var(--tone-ok-bg); color: var(--tone-ok-fg); }
+[data-tone="warn"] { background-color: var(--tone-warn-bg); color: var(--tone-warn-fg); }
+[data-tone="info"] { background-color: var(--tone-info-bg); color: var(--tone-info-fg); }
+[data-tone="danger"] { background-color: var(--tone-danger-bg); color: var(--tone-danger-fg); }
+[data-tone="husk"] { background-color: var(--tone-husk-bg); color: var(--tone-husk-fg); }
