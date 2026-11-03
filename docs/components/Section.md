@@ -15,7 +15,7 @@ Source: driver `section.tsx`. The collapsible header variant is not built here.
 Based on shadcn Card. `.card` and `.section-card` are `bg-surface` with a `border` hairline, `radius-app-card` corners and `shadow-app-card`, set off from the white back office page by the hairline. `.card` holds page panels such as the Driver detail header and the Reports setup. List boards (tabs, toolbar, table, pager) are not cards: they sit straight on the page. `.section-card` adds the header row used on Booking detail, Create booking, Driver detail and Analytics:
 
 - `.section-head`: 52px minimum, 12px by 16px padding, a hairline under it, the title on the left and actions on the right.
-- `.section-title`: 16px/600 in `text-primary` (shadcn CardTitle). An optional `.section-desc` under it is 13px `text-muted` (CardDescription).
+- `.section-title`: 16px/600 in `text-primary` (shadcn CardTitle). An optional `.section-desc` under it is 14px `text-muted` (CardDescription).
 - `.section-body`: 16px padding, 16px between children. Field grids inside use `.grid` with `--cols`.
 - `.section-foot`: buttons on the right after a hairline (CardFooter).
 

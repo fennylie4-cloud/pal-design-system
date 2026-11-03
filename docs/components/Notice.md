@@ -6,7 +6,7 @@ A message: inline in a section (a flight PAL couldn't find, a seat-count warning
 
 **Consumer provides:** `class="notice"`, optional `data-tone` (`ok`, `info`, `warn`, `danger`), an optional 16px icon first, an optional `.notice-title`, then one or two sentences.
 
-Based on shadcn Alert: a grid with a 16px icon column and 12px gap, 12px by 16px padding, `radius-md`, 13px text in `text-primary`. Without a tone it is `bg-surface` with a `border` hairline and a `text-muted` icon. With a tone it takes the tone's `-bg` fill, a hairline in the tone's `-fg` at 25%, and the icon and title in the tone's `-fg`; the text stays `text-primary` so it reads easily. Without an icon the text takes the whole width.
+Based on shadcn Alert: a grid with a 16px icon column and 12px gap, 12px by 16px padding, `radius-md`, 14px text in `text-primary`. Without a tone it is `bg-surface` with a `border` hairline and a `text-muted` icon. With a tone it takes the tone's `-bg` fill, a hairline in the tone's `-fg` at 25%, and the icon and title in the tone's `-fg`; the text stays `text-primary` so it reads easily. Without an icon the text takes the whole width.
 
 Says what happened and what to do next.
 
