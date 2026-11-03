@@ -25,6 +25,6 @@ Source: `buttons.css`, `index.html .btn-primary`, driver `components/ui/button.t
 Based on shadcn Button, rebuilt in plain CSS with PAL tokens (`styles/backoffice.css`).
 
 - **Sizes:** default 36px (`.btn`), `btn-sm` 32px, `btn-lg` 40px for sign-in, and `icon-btn` 32px square (shadcn `icon-sm`). 14px label, 500 weight, 16px icons; padding drops from 16px to 12px when the button has an icon.
-- **Variants:** `btn-primary` (shadcn default), `btn-outline`, `btn-ghost`, `btn-destructive`, and `link-btn` (shadcn link) for inline actions such as Add stop. Outline and ghost hover to `accent-fill` with `accent-text`.
+- **Variants:** `btn-primary` (shadcn default), `btn-outline`, `btn-ghost`, `btn-destructive`, and `link-btn` (shadcn link) for inline actions such as Add stop, Audit trail and the actions in a table's selection bar (Assign driver, Dispatch, Mark as paid); add `danger` for a destructive one such as Cancel. A link button is text in `accent-text` at 500 (or `destructive`), with an optional icon, that underlines on hover and shows the gold focus ring. Outline and ghost hover to `accent-fill` with `accent-text`.
 - **States:** focus is a 3px `shadow-focus` ring; disabled is 50% opacity and not clickable, as in shadcn.
 - **PAL differences:** corners use `radius-control` (6px) instead of shadcn's 8px; no `shadow-xs`, because back office surfaces are flat; pressed primary goes to `accent-strong`. `btn-danger-outline` is a PAL addition: a red label on an outline button, for bulk delete and cancel in toolbars. shadcn's `secondary` isn't used.
