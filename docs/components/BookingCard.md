@@ -2,6 +2,8 @@
 
 The driver's main list item: everything about one job at a glance.
 
+**Products:** Driver app.
+
 **Consumer provides:** a `booking` object (`ref`, `day`, `time`, `state`, `service`, optional `flight`, `pax`, `bags`, `childSeats`, `from`, `to`, `stops`, urgency fields) and `onAccept` for new jobs.
 
 Scan order, top to bottom: time (biggest), urgency or status pill, service with flight badge, requirement chips, route, Accept, reference.

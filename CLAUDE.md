@@ -7,7 +7,7 @@ Rules:
 - Use tokens, never raw hex. Gold is `--accent` (husk-400 #b6a269). Gold text that must be read is `--accent-text`. Text on gold is `--on-accent`, never white.
 - One gold-filled primary button per visible surface.
 - Fonts by product: the marketing website uses Barlow (`--font-sans`). Every app uses Geist (`--font-app`). Never mix them on one screen. Geist Mono only for refs, flight codes and pill labels.
-- Scope products with `data-app="marketing"` or `data-app="driver"` on `<html>`. A product may override semantic tokens only, never primitives (`cod-*`, `husk-*`, spacing, radius, type scale).
+- Scope products with `data-app="marketing"`, `data-app="driver"` or `data-app="backoffice"` on `<html>`. A product may override semantic tokens only, in `tokens.json`, never primitives (`cod-*`, `husk-*`, spacing, radius, type scale).
 - Light theme only. Do not add dark mode styles.
 - Marketing card hover is one choreography everywhere: border to `--accent-border-hover`, `--shadow-card-hover`, 3px lift on `--ease-slow`.
 - Driver trip states use `data-pill="<state>"`; flight and urgency signals use `data-tone="ok|warn|info|danger|husk"`. Always pair colour with a word.

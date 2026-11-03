@@ -9,9 +9,14 @@ os.makedirs(OUT, exist_ok=True)
 t = json.load(open(os.path.join(ROOT, "tokens.json")))
 colors = t["color"]["tokens"]
 
+# Apps inherit from each other: the back office starts from the driver app values.
+FALLBACK = {"driver": ["marketing"], "backoffice": ["driver", "marketing"]}
 def raw(tok, th):
     v = tok["value"]
-    return v if isinstance(v, str) else v.get(th, v["marketing"])
+    if isinstance(v, str): return v
+    for k in [th] + FALLBACK.get(th, []):
+        if k in v: return v[k]
+    return v["marketing"]
 def css(val):
     return re.sub(r"\{([^}]+)\}", r"var(--\1)", val)
 byname = {c["name"]: c for c in colors}
@@ -26,15 +31,16 @@ L = [HDR, "@import url(\"https://fonts.googleapis.com/css2?family=Barlow:wght@30
      "/* Primitives + marketing semantics (default scope). */", ":root, [data-app=\"marketing\"] {"]
 for c in colors: L.append(f"  --{c['name']}: {css(raw(c,'marketing'))};")
 L.append("}\n")
-L.append("/* Driver app: semantic overrides only. Primitives never change per product. */")
-L.append("[data-app=\"driver\"] {")
-for c in colors:
-    v = c["value"]
-    if isinstance(v, dict) and "driver" in v and v["driver"] != v["marketing"]:
-        L.append(f"  --{c['name']}: {css(v['driver'])};")
-L.append("}\n")
+for app, label in [("driver", "Driver app"), ("backoffice", "Back office")]:
+    L.append(f"/* {label}: semantic overrides only. Primitives never change per product. */")
+    L.append(f"[data-app=\"{app}\"] {{")
+    for c in colors:
+        v = c["value"]
+        if isinstance(v, dict) and raw(c, app) != v["marketing"]:
+            L.append(f"  --{c['name']}: {css(raw(c, app))};")
+    L.append("}\n")
 L.append("/* Apps set text in Geist; the marketing site in Barlow. */")
-L.append("[data-app=\"driver\"] { font-family: var(--font-app); }\n")
+L.append("[data-app=\"driver\"], [data-app=\"backoffice\"] { font-family: var(--font-app); }\n")
 L.append(":root {")
 for fam in ["spacing", "radius", "shadow", "duration", "easing"]:
     L.append(f"  /* {fam} */")
@@ -139,10 +145,11 @@ ts = [HDR.replace("/*", "/**").replace(" */", "\n */"),
 "  cod: " + tsobj(prim["cod"], "    ") + ",",
 "  husk: " + tsobj(prim["husk"], "    ") + ",",
 "} as const;\n",
-"/** Semantic colours per product. The native driver app uses `driver`. */",
+"/** Semantic colours per product. The native driver app uses `driver`; the back office web app uses `backoffice`. */",
 "export const Colors = {",
 "  marketing: " + tsobj(sem("marketing"), "    ") + ",",
 "  driver: " + tsobj(sem("driver"), "    ") + ",",
+"  backoffice: " + tsobj(sem("backoffice"), "    ") + ",",
 "} as const;\n",
 "export type ThemeColor = keyof typeof Colors.driver;\n",
 "/** Apps use Geist. Load with expo-font: @expo-google-fonts/geist and @expo-google-fonts/geist-mono. */",

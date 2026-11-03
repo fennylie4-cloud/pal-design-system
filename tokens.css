@@ -75,6 +75,11 @@
   --tone-danger-fg: #8b3418;
   --tone-husk-bg: rgba(182, 162, 105, 0.12);
   --tone-husk-fg: #705638;
+  --chart-mark: var(--husk-500);
+  --chart-area: rgba(162, 137, 80, 0.12);
+  --chart-b2b: #2a78d6;
+  --chart-b2c: #eb6834;
+  --chart-grid: var(--cod-200);
 }
 
 /* Driver app: semantic overrides only. Primitives never change per product. */
@@ -90,8 +95,20 @@
   --accent-strong: var(--husk-700);
 }
 
+/* Back office: semantic overrides only. Primitives never change per product. */
+[data-app="backoffice"] {
+  --bg-app: #ffffff;
+  --bg-elevated: var(--cod-50);
+  --bg-warm: #faf7f2;
+  --text-body: var(--cod-900);
+  --text-muted: var(--cod-500);
+  --border: #ececec;
+  --accent-hover: #bdab78;
+  --accent-strong: var(--husk-700);
+}
+
 /* Apps set text in Geist; the marketing site in Barlow. */
-[data-app="driver"] { font-family: var(--font-app); }
+[data-app="driver"], [data-app="backoffice"] { font-family: var(--font-app); }
 
 :root {
   /* spacing */

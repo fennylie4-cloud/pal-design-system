@@ -2,6 +2,8 @@
 
 Label/value row inside a driver Section.
 
+**Products:** Driver app.
+
 **Consumer provides:** `k` (label), `v` (value), optional `icon`, `mono` for refs and IDs.
 
 Label in `text-muted`, value right-aligned in `text-primary` at 500. Use `mono` for booking references.

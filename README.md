@@ -1,13 +1,13 @@
 # PAL Design System
 
-Design tokens, rules and component guidelines for PAL (Prime Aces Limousine): the marketing website and the PAL Driver App. Light theme only.
+Design tokens, rules and component guidelines for PAL (Prime Aces Limousine): the marketing website, the PAL Driver App and the back office. Light theme only.
 
 ## What's inside
 
 | Path | What it is | Use it for |
 | --- | --- | --- |
 | `docs/BRAND-BOOK.md` | Voice, colour, type, spacing, shape, motion, icons, logo rules | Read first, by people and AI tools |
-| `docs/components/*.md` | One guideline per component: when to use it, props, states | Building screens |
+| `docs/components/*.md` | One guideline per component: when to use it, props, states. A **Products** line says which products use it. | Building screens |
 | `docs/SOURCE-CONFLICTS.md` | Where old sources disagreed and what was chosen; known contrast failures | Before changing a value |
 | `tokens.json` | Every token with a usage note. The single source of truth. | Tools, Figma plugins, scripts |
 | `tokens.css` | CSS custom properties + type classes | Plain HTML / any web project |
@@ -62,7 +62,7 @@ The same system exists as a Claude design system page. Ask Fenny to share it wit
 
 ## Products are scopes
 
-`data-app="driver"` overrides only semantic tokens (backgrounds, text, border, accent states) and the font. Primitives (`cod-*`, `husk-*`, spacing, radius, type scale) are shared by every product and never overridden.
+`data-app="driver"` and `data-app="backoffice"` override only semantic tokens (backgrounds, text, border, accent states) and the font. The back office starts from the driver app values. Primitives (`cod-*`, `husk-*`, spacing, radius, type scale) are shared by every product and never overridden.
 
 ## Changing a token
 
@@ -75,6 +75,6 @@ Never edit the three generated files by hand.
 
 ## Not included
 
-- Production component code. It lives in the PAL Driver App repo; `docs/components/` describes it.
+- Production component code. Driver app components live in the PAL Driver App repo and back office components in `PAL Backend/web`; `docs/components/` describes both. The back office redesign app shows every guide with live previews at `/design-system`.
 - Fleet and city photography. It stays with the website.
 - A vector logo. The shipped mark is a PNG only.

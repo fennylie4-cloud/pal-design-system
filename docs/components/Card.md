@@ -2,6 +2,8 @@
 
 The white panel that holds one idea (an audience, a service, a city, a vehicle) on the grey marketing canvas.
 
+**Products:** Website.
+
 **Consumer provides:** `title`, body `children`, optional `icon` (28px Lucide, gold), optional `action` (hover-revealed link text) and `href` to make the whole card a link.
 
 - `bg-surface` on `bg-app`, `border` hairline, `radius-card` (10px), `card-padding` (28px), 12px gap between every slot.
