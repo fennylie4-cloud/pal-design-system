@@ -12,6 +12,7 @@ A short label: a flag such as "Most Popular", a name or code, a trip's state, or
 - `outline` (back office): a name or a code that isn't a state.
 - `status` (driver app, back office): a trip's lifecycle state, with a dot.
 - `tone` (driver app, back office): any other state or signal, coloured by tone: flight status, urgency, dispatch and payment, requirement chips.
+- `category` (back office): a name from a fixed set, such as a country or a booking source, tinted so the set reads at a glance.
 
 Source: DESIGN.md `badge-pill`, driver `status-pill.tsx`, `badges.tsx` `TonedPill` and `index.css [data-pill]`, `[data-tone]`.
 
@@ -40,5 +41,7 @@ A status or tone badge is a signal. Names and codes that aren't a state use the 
 **Blinking:** pass `live` only where one trip is shown on its own, which is the Booking detail header. Tables, the calendar and the status card keep the dot still, so at most one dot blinks on screen.
 
 **Tone:** pass `tone`. Used for dispatch and payment status, active or inactive, promotion state (Live, Scheduled, Expired), event phase (On now, Upcoming, Ended), flight status and requirement chips (`husk`: 2 pax, 1 child seat).
+
+**Category:** pass `category`, 1 to 5. The outline shape and type with no border, filled with `category-<n>-bg` and lettered in `category-<n>-fg`: 1 blue, 2 violet, 3 teal, 4 rose, 5 olive, each over 6:1. Used for Country (Company and Customers tables) and Source (Customers). Countries map by their id and sources by a fixed order (`lib/categories.ts`), so a name keeps its colour on every page. The hues avoid the tone colours, and a category never stands for a state: a red or green country would read as a problem or a success.
 
 Source: `PAL Backend/web/src/components/Badge.vue`, styles in `src/styles/backoffice.css` `.badge`, `.badge-list`, `.pill[data-pill]`, `.pill[data-tone]`.

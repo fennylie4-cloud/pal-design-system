@@ -75,6 +75,16 @@
   --tone-danger-fg: #8b3418;
   --tone-husk-bg: rgba(182, 162, 105, 0.12);
   --tone-husk-fg: #705638;
+  --category-1-bg: rgba(42, 120, 214, 0.12);
+  --category-1-fg: #1d5596;
+  --category-2-bg: rgba(124, 92, 196, 0.12);
+  --category-2-fg: #57399c;
+  --category-3-bg: rgba(20, 150, 140, 0.12);
+  --category-3-fg: #0d6058;
+  --category-4-bg: rgba(200, 70, 120, 0.12);
+  --category-4-fg: #93294f;
+  --category-5-bg: rgba(120, 140, 40, 0.12);
+  --category-5-fg: #4f5e12;
   --chart-mark: var(--husk-500);
   --chart-area: rgba(162, 137, 80, 0.12);
   --chart-b2b: #2a78d6;
