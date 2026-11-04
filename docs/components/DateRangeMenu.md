@@ -20,4 +20,6 @@ The financial year starts on 1 April, as in WeWeb.
 
 **DateRangeField.** The Custom start and end dates on Operations and Calendar use the same calendar on its own: an outline Button with a calendar icon and "03 Nov 2026 to 10 Nov 2026", opening a popover with the range calendar and the Start date and End date read-outs. There is no Apply button: as in WeWeb, the range applies as soon as the end date is picked, and the popover closes.
 
+Inside a form (Event addon's Active Date in Settings), pass `field` to give DateRangeField the DatePicker look instead: an Input with the calendar icon and the dates, no chevron, opening aligned to the field's left edge. `label` sets its accessible name ("Custom pickup dates" by default).
+
 Source: `PAL Backend/web/src/components/list/DateRangeMenu.vue`, `DateRangeField.vue`, the shared calendar in `RangeCalendar.vue`, `lib/ranges.ts`. Calendar styles in `src/styles/backoffice.css` `.cal-*`.

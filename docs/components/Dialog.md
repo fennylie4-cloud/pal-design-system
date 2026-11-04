@@ -13,7 +13,7 @@ Look: the page dims to `cod-950` at 50%. The panel is `bg-surface` with a `borde
 Footer: buttons on the right, 8px apart. Close (outline) sits to the left of the one primary action, which names what happens ("Create promotion", "Save changes").
 
 PAL differences from shadcn:
-- The body scrolls when it is taller than the window, so the footer keeps a `border` hairline above it and stays in view.
+- The body scrolls when it is taller than the window, so the footer keeps a `border` hairline above it and stays in view. The body starts 4px below the header (header bottom padding 12px, body top padding 4px) so the 3px focus ring of the first field is not cut off by the scroll clip; title to first label stays 16px.
 - `width` sets the panel width for wide forms (640 to 920px), capped at the window width less 32px.
 
 Source: `PAL Backend/web/src/components/BaseModal.vue`, styles in `src/styles/backoffice.css` `.dialog`.
